@@ -18,14 +18,9 @@ export const ClientLocation = () => {
 		Get location
 	*/
 	const getLocationInfo = async () => {
-		const response = await fetch('/api/location');
-
-		if (!response.ok) {
-			console.error("Failed to load location:", response.status);
-			return;
-		}
-
+		const response = await fetch('/apip.cc/json');
 		const locationData = await response.json();
+
 		setLocationInfo(locationData);
 	}
 
