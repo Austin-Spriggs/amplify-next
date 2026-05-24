@@ -8,7 +8,7 @@ export default function App() {
 			<ClientLocation />
 			<ServerLocation />
 
-			<ToDo />
+			{/* <ToDo /> */}
 		</main>
 	);
 }
