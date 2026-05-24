@@ -18,7 +18,7 @@ export const ClientLocation = () => {
 		Get location
 	*/
 	const getLocationInfo = async () => {
-		const response = await fetch('/apip.cc/json');
+		const response = await fetch('https://apip.cc/json');
 		const locationData = await response.json();
 
 		setLocationInfo(locationData);
