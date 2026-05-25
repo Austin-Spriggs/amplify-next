@@ -20,7 +20,7 @@ export const ClientLocation = () => {
 		Get location
 	*/
 	const getLocationInfo = async () => {
-		const response = await fetch('https://apip.cc/json');
+		const response = await fetch('api/location');
 		const locationData = await response.json();
 
 		setLocationInfo(locationData);
@@ -40,7 +40,7 @@ export const ClientLocation = () => {
 		Convert celsius to fahrenheit
 	*/
 	const convertToFahrenheit = (temp: string) => {
-		return (parseInt(temp) * 1.8) + 32;
+		return (parseFloat(temp) * 1.8) + 32;
 	}
 
 
@@ -63,7 +63,7 @@ export const ClientLocation = () => {
 					<li><b>Zip</b>: { locationInfo.Postal }</li>
 					<li><b>Time Zone</b>: { locationInfo.TimeZone }</li>
 					<li><b>Lat/Lon</b>: { locationInfo.Latitude }/{ locationInfo.Longitude }</li>
-					<li><b>Temperature</b>: { temperature }</li>
+					<li><b>Temperature</b>: { temperature }°F</li>
 				</ul>
 			</>
 			: <h2>Loading...</h2>

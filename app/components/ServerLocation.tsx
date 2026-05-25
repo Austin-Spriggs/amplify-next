@@ -6,7 +6,7 @@ export const ServerLocation = async () => {
 	const temperatureData = await response.json();
 
 	const convertToFahrenheit = (temperature: string) => {
-		return (parseInt(temperature) * 1.8) + 32;
+		return (parseFloat(temperature) * 1.8) + 32;
 	}
 
 	const temperature = convertToFahrenheit(temperatureData.dataseries[0].temp2m);
