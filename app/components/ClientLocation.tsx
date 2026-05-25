@@ -20,14 +20,20 @@ export const ClientLocation = () => {
 		Get location
 	*/
 	const getLocationInfo = async () => {
-		const response = await fetch('api/location');
+		const response = await fetch('https://apip.css/json');
 		const locationData = await response.json();
 
+		// Set location
 		setLocationInfo(locationData);
 
+		// Get and set locaiton temperature
 		getTemperature(locationData.Latitude, locationData.Longitude);
 	}
 
+
+	/*
+		Gets and sets temperature for a given location
+	*/
 	const getTemperature = async (lat: string, lon: string) => {
 		const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
 		const temperatureData = await response.json();
