@@ -29,7 +29,7 @@ export const ClientLocation = () => {
 	}
 
 	const getTemperature = async (lat: string, lon: string) => {
-		const response = await fetch(`https://www.7timer.info/bin/api.pl?lon=${lon}&lat=${lat}&product=astro&output=json`);
+		const response = await fetch(`/api/weather?lat=${lat}&lon=${lon}`);
 		const temperatureData = await response.json();
 
 		setTemperature(convertToFahrenheit(temperatureData.dataseries[0].temp2m));
